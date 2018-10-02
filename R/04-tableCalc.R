@@ -49,8 +49,10 @@ writePTCIntoTable <- function(data) {
               "minusTotalAmt",
               "netPayrollAmt",     
               "empNote" );
+ 
+  data <- as.data.frame(data);
+  #将数据从tibble调整为data.frame
   names(data) <- NameEn;
-
   data$grossSalaryAmt <-data$baseAmt+
     data$seniorityAmt+
     data$fullAttendanceAmt+
